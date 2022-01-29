@@ -25,6 +25,6 @@ export const FilterProvider = ({ children }) => {
   );
 };
 
-export const userFilterContext = () => {
+export const useFilterContext = () => {
   return useContext(FilterContext);
 };

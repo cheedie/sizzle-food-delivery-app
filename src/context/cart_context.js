@@ -16,6 +16,6 @@ export const CartProvider = ({ children }) => {
   return <CartProvider value="cart context">{children}</CartProvider>;
 };
 
-export const userCartContext = () => {
+export const useCartContext = () => {
   return useContext(CartContext);
 };
