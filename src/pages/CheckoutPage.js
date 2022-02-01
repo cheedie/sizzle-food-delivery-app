@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 
 const CheckoutPage = () => {
-  return <div>checkout page</div>;
+  return (
+    <main>
+      <PageHero title="checkout" />
+      <section className="page section-center section"></section>
+    </main>
+  );
 };
 
 export default CheckoutPage;

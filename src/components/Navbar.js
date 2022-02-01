@@ -32,6 +32,11 @@ const Navbar = () => {
               </li>
             );
           })}
+          <li>
+            <Link to="/checkout" className="nav-link">
+              checkout
+            </Link>
+          </li>
         </ul>
         <CartButtons />
       </div>

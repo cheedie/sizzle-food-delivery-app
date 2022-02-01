@@ -17,6 +17,7 @@ import Stars from "./Stars";
 import CartContent from "./CartContent";
 import PageHero from "./PageHero";
 import StripeCheckout from "./StripeCheckout";
+import Work from "./Work";
 
 export {
   FeaturedProducts,
@@ -38,4 +39,5 @@ export {
   CartContent,
   PageHero,
   StripeCheckout,
+  Work,
 };
