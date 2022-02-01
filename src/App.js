@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 import {
   Home,
+  AboutPage,
   SingleProduct,
   Cart,
   Checkout,
@@ -20,6 +21,7 @@ function App() {
         <Sidebar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<AboutPage />} />
           <Route exact path="/products" element={<Products />} />
           <Route exact path="/products/:id" element={<SingleProduct />} />
           <Route exact path="/cart" element={<Cart />} />

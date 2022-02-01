@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import heroImg from "../assets/hero-photo.png";
 import aboutImg from "../assets/about-img.png";
 import { AiFillClockCircle, AiOutlineArrowRight } from "react-icons/ai";
@@ -65,9 +66,9 @@ const Hero = () => {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
             corrupti quis eius corporis aperiam ex!
           </p>
-          <button className="btn" type="button">
+          <Link to="/about" className="btn">
             Learn More
-          </button>
+          </Link>
         </div>
       </section>
     </main>

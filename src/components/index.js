@@ -18,7 +18,7 @@ import CartContent from "./CartContent";
 import PageHero from "./PageHero";
 import StripeCheckout from "./StripeCheckout";
 import Work from "./Work";
-
+import Testimonial from "./Testimonial";
 export {
   FeaturedProducts,
   Navbar,
@@ -40,4 +40,5 @@ export {
   PageHero,
   StripeCheckout,
   Work,
+  Testimonial,
 };
