@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useProductsContext } from "../context/products_context";
+import Error from "./Error";
+import Loading from "./Loading";
+import Product from "./Product";
 import { Link } from "react-router-dom";
-import { BsPlusLg } from "react-icons/bs";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import productImg from "../assets/product-img1.jpeg";
 
 const FeaturedProducts = () => {
+  const {
+    products_loading: loading,
+    products_error: error,
+    featured_products: featured,
+    products,
+  } = useProductsContext();
+
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <Error />;
+  }
+
   return (
     <section className="menu-section">
       <div className="work-info">
@@ -16,36 +31,12 @@ const FeaturedProducts = () => {
         </p>
       </div>
       <div className="menu-items">
-        <article className="product">
-          <div className="product-container info-contents">
-            <img src={productImg} className="img product-img" alt="" />
-            <div className="product-details">
-              <h5>Rose Muffen</h5>
-              <p>N2000</p>
-            </div>
-            <div className="product-info">
-              <p>served with french fries + drink</p>
-              <p>
-                choice of coke, fanta, sprite. Ugrade to large fries. Add
-                whopper patty, Add tender crisp patty and more...
-              </p>
-            </div>
-            <div className="product-icon">
-              <div className="review-star">
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiOutlineStar />
-              </div>
-              <button className="product-cart-btn">
-                <BsPlusLg />
-              </button>
-            </div>
-          </div>
-        </article>
+        {featured.map((product) => {
+          return <Product key={product.id} {...product} />;
+        })}
       </div>
       <Link to="/products" className="btn">
-        view more
+        all products
       </Link>
     </section>
   );

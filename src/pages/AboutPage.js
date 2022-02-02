@@ -10,7 +10,7 @@ const AboutPage = () => {
       <PageHero title="about" />
       <section className="about-section section-center">
         <div className="about-img">
-          <img src={aboutImg} class="img about-photo" alt="about-img" />
+          <img src={aboutImg} className="img about-photo" alt="about-img" />
         </div>
         <div className="about-info">
           <h3 className="title">About</h3>

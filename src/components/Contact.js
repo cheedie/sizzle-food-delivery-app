@@ -4,16 +4,26 @@ const Contact = () => {
   return (
     <section className="menu-section">
       <div className="work-info">
-        <h2 className="main-text">Have Question in mind?</h2>
-        <p>Let us help you</p>
+        <h2 className="main-text">Join our newsletter to get 20% off</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          aspernatur error necessitatibus at omnis eius exercitationem saepe,
+          explicabo repudiandae molestias dolores ea itaque harum perspiciatis!
+          Doloribus deleniti vero harum reiciendis.
+        </p>
       </div>
-      <form action="" className="contact-form">
+      <form
+        method="POST"
+        className="contact-form"
+        action="https://formspree.io/f/xbjwgobp"
+      >
         <input
           type="email"
           className="form-input"
           placeholder="yourmail@gmail.com"
+          name="_replyto"
         />
-        <button type="button" className="btn form-btn">
+        <button type="submit" className="btn form-btn">
           send
         </button>
       </form>

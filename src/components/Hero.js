@@ -24,8 +24,8 @@ const Hero = () => {
                 <AiOutlineArrowRight />
               </button>
             </div>
-            <div class="hero-image">
-              <img src={heroImg} alt="salad-bowl" class="img hero-photo" />
+            <div className="hero-image">
+              <img src={heroImg} alt="salad-bowl" className="img hero-photo" />
             </div>
           </div>
           <div className="info-container">
@@ -50,7 +50,7 @@ const Hero = () => {
 
       <section className="about-section section-center">
         <div className="about-img">
-          <img src={aboutImg} class="img about-photo" alt="about-img" />
+          <img src={aboutImg} className="img about-photo" alt="about-img" />
         </div>
         <div className="about-info">
           <h3 className="title">About</h3>
