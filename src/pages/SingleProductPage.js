@@ -27,6 +27,7 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
   }, [id]);
+  console.log(product);
 
   useEffect(() => {
     if (error) {
@@ -43,25 +44,33 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
-  const {
-    name,
-    price,
-    description,
-    // stock,
-    // stars,
-    // reviews,
-    id: value,
-    image,
-  } = product;
+  // const {
+  //   name,
+  //   price,
+  //   description,
+  //   stock,
+  //   stars,
+  //   reviews,
+  //   id: value,
+  //   image,
+  // } = product;
+
   return (
     <section>
-      {/* <PageHero title={name} product />
+      {/* <PageHero title={name} product /> */}
       <div className="section section-center page">
         <Link to="/products" className="btn">
           back to products
         </Link>
       </div>
-      <div></div> */}
+      <div>
+        <section className="content">
+          <h2></h2>
+          {/* <Stars stars={stars} reviews={reviews} /> */}
+          <h5></h5>
+          {/* {stock > 0 && <AddToCart />} */}
+        </section>
+      </div>
     </section>
   );
 };

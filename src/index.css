@@ -549,6 +549,18 @@ ERROR PAGE
   margin-bottom: 2rem;
 }
 
+/* 
+===============
+PRODUCT PAGE
+===============
+ */
+
+.products-container {
+  display: grid;
+  gap: 3rem 1.5rem;
+  margin: 4rem auto;
+}
+
 @media screen and (min-width: 768px) {
   .toggle-nav {
     display: none;
@@ -571,6 +583,9 @@ ERROR PAGE
   }
   .menu-items {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .products-container {
+    grid-template-columns: 200px 1fr;
   }
 }
 

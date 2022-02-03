@@ -19,4 +19,4 @@ export const links = [
 
 export const products_url = "https://sizzle-api.herokuapp.com/api/v1/products";
 
-export const single_product_url = `https://sizzle-api.herokuapp.com/api/v1/products?id=`;
+export const single_product_url = `https://sizzle-api.herokuapp.com/api/v1/products/`;
