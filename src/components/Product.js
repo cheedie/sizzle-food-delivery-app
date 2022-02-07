@@ -30,9 +30,9 @@ const Product = ({ image, name, price, id, description }) => {
               <AiFillStar />
               <AiOutlineStar />
             </div>
-            <button className="product-cart-btn">
+            <Link to="/cart" className="product-cart-btn">
               <BsPlusLg />
-            </button>
+            </Link>
           </div>
         </div>
       </article>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductList, PageHero } from "../components";
+import { ProductList, PageHero, Sort } from "../components";
 
 const ProductsPage = () => {
   return (
@@ -8,6 +8,7 @@ const ProductsPage = () => {
       <div className="page">
         <div className="section-center products-container">
           <div>
+            <Sort />
             <ProductList />
           </div>
         </div>
