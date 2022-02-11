@@ -7,7 +7,8 @@ import {
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
   GET_SINGLE_PRODUCT_BEGIN,
-} from "../actions";
+} 
+from "../actions";
 
 const products_reducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {

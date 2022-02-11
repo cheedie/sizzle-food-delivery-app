@@ -1,4 +1,5 @@
 import {
+  ADD_TO_CART,
   CLEAR_CART,
   COUNT_CART_TOTALS,
   REMOVE_CART_ITEM,
@@ -6,7 +7,20 @@ import {
 } from "../actions";
 
 const cart_reducer = (state, action) => {
-  return state;
+  if (action.type === ADD_TO_CART) {
+    const { id, amount, product } = action.payload;
+
+    const newItem = {
+      id: product.id,
+      name: product.name,
+      amount,
+
+      image: product.image.url,
+      price: product.price,
+      max: product.stock,
+    };
+    return { ...state, cart: [...state.cart, newItem] };
+  }
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 
