@@ -2,7 +2,6 @@ import React from "react";
 import aboutImg from "../assets/about-img.png";
 
 import { PageHero } from "../components";
-import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (

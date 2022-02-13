@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { formatPrice } from "../utilis/helpers";
 import { BsPlusLg } from "react-icons/bs";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import productImg from "../assets/product-img1.jpeg";
+// import productImg from "../assets/product-img1.jpeg";
 
 const Product = ({ image, name, price, id, description }) => {
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useReducer, useEffect } from "react";
+import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "../reducers/filter_reducer";
 import {
   LOAD_PRODUCTS,
@@ -6,9 +6,9 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_PRODUCTS,
-  UPDATE_FILTERS,
-  CLEAR_FILTERS,
-  FILTER_PRODUCTS,
+  // UPDATE_FILTERS,
+  // CLEAR_FILTERS,
+  // FILTER_PRODUCTS,
 } from "../actions";
 
 import { useProductsContext } from "./products_context";

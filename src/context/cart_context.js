@@ -1,4 +1,4 @@
-import React, { useState, useContext, useReducer, useEffect } from "react";
+import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "../reducers/cart_reducer";
 import {
   ADD_TO_CART,

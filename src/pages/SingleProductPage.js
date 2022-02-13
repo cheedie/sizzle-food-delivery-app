@@ -4,14 +4,7 @@ import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utilis/constant";
 import { formatPrice } from "../utilis/helpers";
 import { Link } from "react-router-dom";
-import {
-  Loading,
-  Error,
-  ProductImages,
-  AddToCart,
-  Stars,
-  PageHero,
-} from "../components";
+import { Loading, Error, AddToCart, Stars, PageHero } from "../components";
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -26,6 +19,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   useEffect(() => {
