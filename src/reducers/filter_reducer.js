@@ -4,9 +4,9 @@ import {
   SET_GRIDVIEW,
   UPDATE_SORT,
   SORT_PRODUCTS,
-  UPDATE_FILTERS,
-  FILTER_PRODUCTS,
-  CLEAR_FILTERS,
+  // UPDATE_FILTERS,
+  // FILTER_PRODUCTS,
+  // CLEAR_FILTERS,
 } from "../actions";
 
 const filter_reducer = (state, action) => {

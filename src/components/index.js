@@ -7,7 +7,6 @@ import Hero from "./Hero";
 import Contact from "./Contact";
 import Loading from "./Loading";
 import Error from "./Error";
-
 import AddToCart from "./AddToCart";
 import Filters from "./Filters";
 import ProductList from "./ProductList";

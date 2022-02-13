@@ -26,8 +26,10 @@ const SingleProductPage = () => {
     if (error) {
       setTimeout(() => {
         navigate("/");
+        // eslint-disable-next-line
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {
