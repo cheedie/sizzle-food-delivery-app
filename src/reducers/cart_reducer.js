@@ -1,4 +1,4 @@
-import { act } from "react-dom/test-utils";
+// import React from "react";
 import {
   ADD_TO_CART,
   CLEAR_CART,
@@ -6,7 +6,6 @@ import {
   REMOVE_CART_ITEM,
   TOGGLE_CART_ITEM_AMOUNT,
 } from "../actions";
-import CartItem from "../components/CartItem";
 
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
@@ -47,13 +46,12 @@ const cart_reducer = (state, action) => {
           }
           return { ...item, amount: newAmount };
         }
-      } else {
-        return item;
       }
+      return item;
     });
-
     return { ...state, cart: tempCart };
   }
+
   if (action.type === COUNT_CART_TOTALS) {
     const { total_items, total_amount } = state.cart.reduce(
       (total, cartItem) => {

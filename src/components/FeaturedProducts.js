@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useProductsContext } from "../context/products_context";
 import Error from "./Error";
 import Loading from "./Loading";
@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
     products_loading: loading,
     products_error: error,
     featured_products: featured,
-    products,
+    // products,
   } = useProductsContext();
 
   if (loading) {
