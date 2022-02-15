@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { PageHero, PayStackCheckout } from "../components";
-import { useUserContext } from "../context/user_context";
+// import { useUserContext } from "../context/user_context";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 
 const CheckoutPage = () => {
   const { cart } = useCartContext();
-  const navigate = useNavigate();
-  const { myUser, loginWithRedirect } = useUserContext();
+  // const navigate = useNavigate();
+  // const { myUser, loginWithRedirect } = useUserContext();
 
   // useEffect(() => {
   //   if (!myUser) {
