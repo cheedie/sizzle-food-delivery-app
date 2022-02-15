@@ -20,7 +20,7 @@ const CheckoutForm = () => {
   const { myUser } = useUserContext();
   const navigate = useNavigate();
   const [clientSecret, setClientSecret] = useState("");
-  const [success, setSuccess] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState("");
@@ -82,7 +82,7 @@ const CheckoutForm = () => {
     } else {
       setError(null);
       setProcessing(false);
-      setSuccess(true);
+      setSucceeded(true);
       setTimeout(() => {
         clearCart();
         navigate("/");
@@ -92,7 +92,7 @@ const CheckoutForm = () => {
 
   return (
     <div>
-      {success ? (
+      {succeeded ? (
         <article>
           <h4>thank you</h4>
           <h4>your payment was successful!</h4>
@@ -111,7 +111,7 @@ const CheckoutForm = () => {
           onChange={handleChange}
         />
 
-        <button id="submit" disabled={processing || disabled || success}>
+        <button id="submit" disabled={processing || disabled || succeeded}>
           <span id="button-text">
             {processing ? <div className="spinner" id="spinner"></div> : "Pay"}
           </span>
@@ -122,14 +122,15 @@ const CheckoutForm = () => {
           </div>
         )}
         {/* Show a success message upon completion */}
-        <p className={success ? "result-message" : "result-message hidden"}>
+
+        {/* <p className={succeeded ? "result-message" : "result-message hidden"}>
           Payment successful, see the result in your
           <a href={`https://dashboard.stripe.com/test/payments`}>
             {" "}
             Stripe dashboard.
           </a>{" "}
           Refresh the page to pay again.
-        </p>
+        </p> */}
       </form>
     </div>
   );

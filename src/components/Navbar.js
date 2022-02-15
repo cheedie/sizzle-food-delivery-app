@@ -10,6 +10,7 @@ import { useUserContext } from "../context/user_context";
 const Navbar = () => {
   const { openSidebar } = useProductsContext();
   const { myUser } = useUserContext();
+  // const [active, setActiveLink] = useState(1);
   return (
     <NavContainer className="nav-bar">
       <div className="nav-center">

@@ -135,7 +135,6 @@ ul {
   font-weight: 600;
 }
 
-
 .btn:hover {
   background: var(--primary-700);
 }
@@ -369,6 +368,9 @@ SIDE-BAR
   letter-spacing: var(--spacing);
 }
 
+.active-link {
+  border-bottom: 2px solid var(--primary-500);
+}
 .sidebar-links a:hover {
   padding: 1rem 1.5rem;
   padding-left: 2rem;
@@ -581,9 +583,7 @@ PRODUCT PAGE
     text-transform: capitalize;
     font-weight: 500;
   }
-  .nav-link:hover {
-    border-bottom: 2px solid var(--primary-500);
-  }
+  j
   .menu-items {
     grid-template-columns: repeat(2, 1fr);
   }
