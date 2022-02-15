@@ -1,60 +1,119 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { PaystackConsumer } from "react-paystack";
+import { usePaystackPayment } from "react-paystack";
 import axios from "axios";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
 import { formatPrice } from "../utilis/helpers";
 import { useNavigate } from "react-router-dom";
 
-const config = {
-  reference: new Date().getTime().toString(),
-  email: "",
-  amount: 20000,
-  publicKey: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY,
-};
-
 const CheckoutForm = () => {
   const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
-  const { myUser } = useUserContext;
+  const { myUser } = useUserContext();
   const navigate = useNavigate();
+  const [clientSecret, setClientSecret] = useState("");
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
   const [closed, setClosed] = useState(true);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState("");
 
-  const handleSuccess = (reference) => {};
+  // const createPaymentIntent = async () => {
+  //   try {
+  //     const { data } = await axios.post(
+  //       "/.netlify/functions/create-payment-intent",
+  //       JSON.stringify({ cart, total_amount, shipping_fee })
+  //     );
+  //     setClientSecret(data.clientSecret);
+  //   } catch (error) {}
+  // };
 
-  const handleClose = (reference) => {};
+  // useEffect(() => {
+  //   createPaymentIntent();
+  //   // eslint-disable-next-line
+  // }, []);
 
-  const componentProps = {
-    ...config,
-    text: "Pay",
-    onSuccess: (reference) => handleSuccess(reference),
-    onClose: handleClose(),
-  };
+  // const handleChange = async (event) => {
+  //   setDisabled(event.empty);
+  //   setError(event.error ? event.error.message : "");
+  // };
+
+  // const config = {
+  //   reference: new Date().getTime().toString(),
+  //   email: `${myUser.email}`,
+  //   first_name: `${myUser.name}`,
+  //   amount:  {formatPrice(total_amount)},
+  //   publicKey: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY,
+  //   text: "Pay Now",
+  // };
+
+  // const placeOrder = async (ev) => {
+  //   ev.preventDefault();
+  //   setProcessing(true);
+  //   const payload = await paystack.confirmCardPayment(clientSecret);
+
+  //   if (payload.error) {
+  //     setError(`Payment failed ${payload.error.message}`);
+  //     setProcessing(false);
+  //   } else {
+  //     setError(null);
+  //     setProcessing(false);
+  //     setSuccess(true);
+  //     setTimeout(() => {
+  //       clearCart();
+  //       navigate("/");
+  //     }, 1000);
+  //   }
+  // };
+
+  // const handleSuccess = (response) => {
+  //   placeOrder(response.ev);
+  // };
+
+  // const handleClose = () => {
+  //   return;
+  // };
+
+  // const initializePayment = usePaystackPayment(config);
 
   return (
     <div>
-      <PaystackConsumer {...componentProps}>
-        {({ initializePayment }) => (
-          <form id="payment-form">
-            <div className="form-group">
-              <label htmlFor="first-name">First Name</label>
-              <input type="text" id="first-name" />
-
-              <label htmlFor="last-name">Last Name</label>
-              <input type="text" id="last-name" />
-            </div>
-            <button
-              type="submit"
-              onClick={() => initializePayment(handleSuccess, handleClose)}
-            >
-              pay
-            </button>
-          </form>
-        )}
-      </PaystackConsumer>
+      {/* {success ? ( */}
+      <article>
+        <h4>thank you</h4>
+        <h4>your payment was successful!</h4>
+        <h4>redirecting to home page shortly</h4>
+      </article>
+      {/* ) : ( */}
+      <article>
+        {/* <h4>Hello, {myUser && myUser.name}</h4> */}
+        {/* <p>your total is : {formatPrice(total_amount)}</p> */}
+      </article>
+      {/* )} */}
+      <form>
+        <div className="form-group">
+          <label htmlFor="first-name">First Name</label>
+          <input type="text" id="first-name" />
+          <label htmlFor="last-name">Last Name</label>
+          <input
+            type="text"
+            id="last-name"
+            //  onClick={handleChange}
+          />
+        </div>
+        <button
+          type="submit"
+          // disabled={processing || disabled || success}
+          // onClick={() => initializePayment(handleSuccess, handleClose)}
+        >
+          pay
+        </button>
+        {/* {error && (
+          <div className="card-error" role="alert">
+            {error}
+          </div>
+        )} */}
+      </form>
     </div>
   );
 };
