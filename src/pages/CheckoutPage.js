@@ -11,11 +11,11 @@ const CheckoutPage = () => {
   const navigate = useNavigate();
   const { myUser, loginWithRedirect } = useUserContext();
 
-  useEffect(() => {
-    if (!myUser) {
-      navigate("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (!myUser) {
+  //     navigate("/");
+  //   }
+  // });
 
   return (
     <main>
