@@ -7,8 +7,17 @@
 }
 
 /* fonts */
-@import url("https://fonts.googleapis.com/css?family=Karla:400|Spectral:400");
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@font-face {
+  font-family: "GilroyLight";
+  src: url(./assets/fonts/Radomir\ Tinkov\ -\ Gilroy-Light.otf);
+  font-weight: 800;
+  font-style: bold;
+}
+@font-face {
+  font-family: "GilroyBold";
+  src: url(./assets/fonts/Radomir\ Tinkov\ -\ Gilroy-ExtraBold.otf);
+  font-style: normal;
+}
 
 html {
   font-size: 100%;
@@ -34,7 +43,8 @@ html {
   --primary-700: #664005;
   --primary-800: #332003;
   --primary-900: #000000;
-
+  --fontFamilyLight: GilroyLight;
+  --fontFamilybold: GilroyBold;
   --smallText: 0.7em;
   --borderRadius: 0.25rem;
   --letterSpacing: 0.5px;
@@ -54,7 +64,7 @@ html {
 
 body {
   background: #fbfbfb;
-  font-family: var(--bodyFont);
+  font-family: var(--fontFamilyLight);
   line-height: 1.75;
 }
 
@@ -132,7 +142,7 @@ ul {
   text-transform: capitalize;
   display: inline-block;
   box-shadow: var(--shadow-4);
-  font-weight: 600;
+  font-family: var(--fontFamilyLight);
 }
 
 .btn:hover {
@@ -236,9 +246,9 @@ ul {
   margin-bottom: 0.2rem;
 }
 .main-text {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.5rem;
   text-transform: capitalize;
+  color: var(--grey-2);
 }
 
 .title-underline {
@@ -259,10 +269,14 @@ ul {
   text-align: center;
 }
 .paragraph-text {
-  color: var(--grey-1);
-  font-size: 0.85rem;
+  color: var(--grey-2);
+  font-size: 1rem;
   text-transform: capitalize;
-  font-weight: 500;
+}
+.text-max-width {
+  max-width: 30rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* 
@@ -306,8 +320,8 @@ HEADER
 .img-logo {
   height: 4rem;
   object-fit: cover;
-  margin-left: -15px;
-  margin-top: 0.5rem;
+
+  margin-top: 0.8rem;
 }
 
 /* 
@@ -385,9 +399,6 @@ HERO
  */
 .hero {
   min-height: calc(100vh - 5rem);
-  background: url(./assets/banner-img.jpeg);
-  background-size: cover;
-  background-position: center;
 }
 
 .hero-container {
@@ -421,7 +432,13 @@ HERO
   padding: 0;
   line-height: 20px;
 }
-
+.hero-info .main-text {
+  max-width: 24rem;
+  font-family: var(--fontFamilybold);
+}
+.hero-info .paragraph-text {
+  max-width: 30rem;
+}
 /* 
 ===============
 ABOUT
@@ -566,6 +583,23 @@ PRODUCT PAGE
   margin: 4rem auto;
 }
 
+/* 
+===============
+FOOTER
+===============
+ */
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  height: 20rem;
+  width: 100%;
+  border: 1px solid green;
+  background-image: url(./assets/footer.png);
+  background-position: bottom;
+  background-size: cover;
+}
+
 @media screen and (min-width: 768px) {
   .toggle-nav {
     display: none;
@@ -579,12 +613,12 @@ PRODUCT PAGE
     margin-right: 3rem;
     letter-spacing: var(--spacing);
     transition: var(--transition);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     text-transform: capitalize;
-    font-weight: 500;
+    font-family: var(--fontFamilybold);
+    font-weight: 200;
   }
-  j
-  .menu-items {
+  j .menu-items {
     grid-template-columns: repeat(2, 1fr);
   }
   .products-container {
@@ -598,6 +632,9 @@ PRODUCT PAGE
     grid-template-columns: auto 1fr auto;
     align-items: center;
   }
+  .img-logo {
+    margin-left: 3rem;
+  }
 
   .sidebar-overlay {
     display: none;
@@ -607,6 +644,7 @@ PRODUCT PAGE
   }
   .hero-info {
     margin-top: 1.85rem;
+    margin-left: 4rem;
   }
 
   .info-container {

@@ -8,7 +8,7 @@ const Work = () => {
       <div className="work-info">
         <h3 className="title">work</h3>
         <h2 className="main-text">How it works</h2>
-        <p className="paragraph-text">
+        <p className="paragraph-text text-max-width">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quo
           suscipit illum odio. Ullam earum impedit tempore dicta quis optio?
         </p>

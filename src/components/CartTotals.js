@@ -56,6 +56,8 @@ const Wrapper = styled.section`
   }
   p {
     text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 700;
   }
   h4 {
     margin-top: 2rem;
@@ -68,6 +70,8 @@ const Wrapper = styled.section`
     margin-top: 1rem;
     text-align: center;
     font-weight: 700;
+    padding: 0.75rem 0;
+    font-size: 1.3rem;
   }
 `;
 

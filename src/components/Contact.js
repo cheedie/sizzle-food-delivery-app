@@ -5,7 +5,7 @@ const Contact = () => {
     <section className="menu-section">
       <div className="work-info">
         <h2 className="main-text">Join our newsletter to get 20% off</h2>
-        <p>
+        <p className="paragraph-text text-max-width">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt,
           aspernatur error necessitatibus at omnis eius exercitationem saepe,
           explicabo repudiandae molestias dolores ea itaque harum perspiciatis!

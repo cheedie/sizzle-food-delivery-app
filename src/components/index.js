@@ -17,6 +17,7 @@ import PageHero from "./PageHero";
 import PayStackCheckout from "./PayStackCheckout";
 import Work from "./Work";
 import Testimonial from "./Testimonial";
+import Product4Page from "./Product4Page";
 export {
   FeaturedProducts,
   Navbar,
@@ -37,4 +38,5 @@ export {
   PayStackCheckout,
   Work,
   Testimonial,
+  Product4Page,
 };

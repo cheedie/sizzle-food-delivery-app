@@ -27,9 +27,18 @@ const Wrapper = styled.div`
       justify-items: center;
       column-gap: 1rem;
       h5 {
-        color: blue;
-        font-weight: 400;
+        color: hsl(209, 61%, 16%);
+        font-weight: 700;
+        font-size: 1.5rem;
       }
+    }
+    span {
+      width: 2rem;
+      height: 2rem;
+    }
+    hr {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
     }
   }
 `;

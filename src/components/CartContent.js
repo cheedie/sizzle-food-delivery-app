@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import CartColums from "./CartColums";
@@ -8,7 +9,7 @@ import CartTotals from "./CartTotals";
 const CartContent = () => {
   const { cart, clearCart } = useCartContext();
   return (
-    <section className="section section-center">
+    <Wrapper className="section section-center">
       <CartColums />
       {cart.map((item) => {
         return <CartItem key={item.id} {...item} />;
@@ -24,8 +25,23 @@ const CartContent = () => {
         </button>
       </div>
       <CartTotals />
-    </section>
+    </Wrapper>
   );
 };
+const Wrapper = styled.section`
+  .link-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
 
+  .clear-btn {
+    background: black;
+    color: #ffff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    letter-spacing: 1px;
+  }
+`;
 export default CartContent;

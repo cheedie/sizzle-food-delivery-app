@@ -4,6 +4,8 @@ import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utilis/constant";
 import { formatPrice } from "../utilis/helpers";
 import { Link } from "react-router-dom";
+
+import styled from "styled-components";
 import { Loading, Error, AddToCart, Stars, PageHero } from "../components";
 
 const SingleProductPage = () => {
@@ -51,17 +53,17 @@ const SingleProductPage = () => {
   } = product;
 
   return (
-    <section>
+    <Wrapper>
       <PageHero title={name} product />
-      <div className="section section-center page">
+      <div className="section section-center">
         <Link to="/products" className="btn">
           back to products
         </Link>
       </div>
-      <div className="products-center">
-        <section className="content">
-          <img src={image} alt={name} />
-          <h2>{name}</h2>
+      <section className="single-product-content">
+        <img src={image} alt={name} />
+        <div>
+          <h2 className="name">{name}</h2>
           <Stars stars={stars} reviews={reviews} />
           <h5 className="price">{formatPrice(price)}</h5>
           <p className="desc">{description}</p>
@@ -73,12 +75,51 @@ const SingleProductPage = () => {
             <span>SKU : </span>
             {sku}
           </p>
-          <hr />
           {stock > 0 && <AddToCart product={product} />}
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </Wrapper>
   );
 };
-
+const Wrapper = styled.section`
+  .single-product-content {
+    display: grid;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto 1rem auto;
+    width: 80vw;
+  }
+  .single-product-content img {
+    height: 25rem;
+    width: 30rem;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .name {
+    font-weight: 800;
+    color: var(--primary-600);
+    font-size: 3rem;
+  }
+  .price {
+    font-style: italic;
+    font-size: 2rem;
+  }
+  .desc {
+    font-size: 2rem;
+  }
+  .info {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 800px) {
+    .single-product-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .single-product-content img {
+      height: 40rem;
+      width: 43rem;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+`;
 export default SingleProductPage;

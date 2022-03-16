@@ -1,16 +1,35 @@
 import React from "react";
-import Product from "./Product";
-
+import Product4Page from "./Product4Page";
+import styled from "styled-components";
 const GridView = ({ products }) => {
   return (
-    <section>
+    <Wrapper>
       <div className="grid-products-container">
         {products.map((product) => {
-          return <Product key={product.id} {...product} />;
+          return <Product4Page key={product.id} {...product} />;
         })}
       </div>
-    </section>
+    </Wrapper>
   );
 };
-
+const Wrapper = styled.section`
+  img {
+    height: 275px;
+    width: 400px;
+  }
+  .grid-products-container {
+    display: grid;
+    gap: 2rem 3rem;
+  }
+  @media (min-width: 992px) {
+    .grid-products-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 1170px) {
+    .grid-products-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+`;
 export default GridView;

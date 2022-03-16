@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
       <div className="work-info">
         <h3 className="title">menu</h3>
         <h2 className="main-text">Explore our best menu</h2>
-        <p className="paragraph-text">
+        <p className="paragraph-text text-max-width">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quo
           suscipit illum odio. Ullam earum impedit tempore dicta quis optio?
         </p>

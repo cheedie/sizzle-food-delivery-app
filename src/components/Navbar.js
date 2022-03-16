@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { links } from "../utilis/constant";
@@ -10,7 +10,7 @@ import { useUserContext } from "../context/user_context";
 const Navbar = () => {
   const { openSidebar } = useProductsContext();
   const { myUser } = useUserContext();
-  // const [active, setActiveLink] = useState(1);
+  const [active, setActiveLink] = useState(1);
   return (
     <NavContainer className="nav-bar">
       <div className="nav-center">
@@ -24,11 +24,17 @@ const Navbar = () => {
         </div>
 
         <ul className="nav-links">
-          {links.map((link) => {
+          {links.map((link, index) => {
             const { id, text, url } = link;
             return (
               <li key={id}>
-                <Link to={url} className="nav-link">
+                <Link
+                  to={url}
+                  className={
+                    active === id ? "active-link nav-link" : "nav-link"
+                  }
+                  onClick={(e) => setActiveLink(e.target.id)}
+                >
                   {text}
                 </Link>
               </li>

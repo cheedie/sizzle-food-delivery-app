@@ -16,13 +16,13 @@ const Hero = () => {
                 Your Favourite Food Delivered Hot & Fresh
               </h2>
               <p className="paragraph-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
-                placeat tempora, eius sint officia id?
+                Healthy switcher chefs do all the prep work, like peeling,
+                chopping & marinating, so you can cook a fresh food.
               </p>
-              <button className="btn">
+              <Link className="btn" to="/products">
                 Order Now
                 <AiOutlineArrowRight />
-              </button>
+              </Link>
             </div>
             <div className="hero-image">
               <img src={heroImg} alt="salad-bowl" className="img hero-photo" />
