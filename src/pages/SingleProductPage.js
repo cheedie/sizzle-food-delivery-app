@@ -85,7 +85,7 @@ const Wrapper = styled.section`
   .single-product-content {
     display: grid;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.2rem;
     margin: 0 auto 1rem auto;
     width: 80vw;
   }
@@ -115,8 +115,8 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(2, 1fr);
     }
     .single-product-content img {
-      height: 40rem;
-      width: 43rem;
+      height: 30rem;
+      width: 38rem;
       object-fit: cover;
       border-radius: 5px;
     }
