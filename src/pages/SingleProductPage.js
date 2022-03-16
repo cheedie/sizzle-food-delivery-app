@@ -113,11 +113,10 @@ const Wrapper = styled.section`
   @media (min-width: 800px) {
     .single-product-content {
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
     }
     .single-product-content img {
       height: 30rem;
-      width: 38rem;
+      width: 40rem;
       object-fit: cover;
       border-radius: 5px;
     }
