@@ -15,11 +15,11 @@ const GridView = ({ products }) => {
 const Wrapper = styled.section`
   img {
     height: 275px;
-    width: 400px;
+    width: 290px;
   }
   .grid-products-container {
     display: grid;
-    gap: 2rem 3rem;
+    gap: 2rem 1rem;
   }
   @media (min-width: 992px) {
     .grid-products-container {

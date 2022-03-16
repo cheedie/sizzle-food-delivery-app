@@ -87,7 +87,7 @@ const Wrapper = styled.section`
     align-items: center;
     gap: 1.2rem;
     margin: 0 auto 1rem auto;
-    width: 80vw;
+    width: 90vw;
   }
   .single-product-content img {
     height: 25rem;
@@ -113,6 +113,7 @@ const Wrapper = styled.section`
   @media (min-width: 800px) {
     .single-product-content {
       grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
     .single-product-content img {
       height: 30rem;
